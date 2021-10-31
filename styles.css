@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@600;700&display=swap");
+
+:root {
+	--one-bg: hsl(222, 26%, 31%);
+	--one-alt-bg: hsl(223, 31%, 20%);
+	--one-screen-bg: hsl(224, 36%, 15%);
+	--one-key-bg: hsl(225, 21%, 49%);
+	--one-key-shadow: hsl(224, 28%, 35%);
+	--one-red: hsl(6, 63%, 50%);
+	--one-dark-red: hsl(6, 70%, 34%);
+	--one-light-gray: hsl(30, 25%, 89%);
+	--one-gray: hsl(28, 16%, 65%);
+}
+
+body {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 32px;
+	font-family: "Spartan", sans-serif;
+	font-weight: 700;
+	background-color: var(--one-bg);
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+.calculator {
+	padding: 1em;
+	max-width: 350px;
+	margin: 0 auto;
+}
+
+.calc-header {
+	display: flex;
+	/* border: 1px solid cyan; */
+	justify-content: space-between;
+	color: white;
+}
+
+.theme-switch {
+	font-size: 0.8rem;
+	align-items: right;
+	font-weight: 600;
+	letter-spacing: 3px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		". theme-toggle-labels"
+		"theme-label toggle";
+	column-gap: 25px;
+	/* border: 1px solid cyan; */
+}
+
+.theme-toggle-labels {
+	grid-area: theme-toggle-labels;
+	display: flex;
+	justify-content: space-between;
+}
+
+.theme-label {
+	grid-area: theme-label;
+}
+
+.theme-toggle {
+	grid-area: toggle;
+	background: var(--one-alt-bg);
+}
+
+.number-output {
+	background: var(--one-alt-bg);
+	padding: 1em;
+	margin: 1em 0;
+	border-radius: 10px;
+	height: 30px;
+}
+
+.input {
+	display: grid;
+	background-color: var(--one-alt-bg);
+	gap: 15px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 60px);
+	border: solid 1em var(--one-alt-bg);
+	border-radius: 10px;
+}
+
+.input div {
+	/* border: 1px solid cyan; */
+	background-color: var(--one-light-gray);
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+}
+
+.input-long {
+	grid-column: span 2;
+}
+
+.input-alt {
+	/* color: white; */
+	background-color: var(--one-key-bg) !important;
+	font-size: 1.2rem;
+	color: white;
+}
+
+.equal {
+	background-color: var(--one-red) !important;
+}
