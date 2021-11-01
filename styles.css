@@ -12,21 +12,25 @@
 	--one-gray: hsl(28, 16%, 65%);
 }
 
-body {
+body,
+button {
 	margin: 0 auto;
 	text-align: center;
-	font-size: 32px;
+	font-size: 30px;
 	font-family: "Spartan", sans-serif;
 	font-weight: 700;
 	background-color: var(--one-bg);
+	border: none;
 }
 
 .attribution {
 	font-size: 11px;
 	text-align: center;
+	color: hsl(30, 25%, 89%);
+	opacity: 60%;
 }
 .attribution a {
-	color: hsl(228, 45%, 44%);
+	color: hsl(30, 25%, 89%);
 }
 
 .calculator {
@@ -39,7 +43,11 @@ body {
 	display: flex;
 	/* border: 1px solid cyan; */
 	justify-content: space-between;
-	color: white;
+	color: var(--one-light-gray);
+}
+
+.logo {
+	align-self: end;
 }
 
 .theme-switch {
@@ -48,11 +56,12 @@ body {
 	font-weight: 600;
 	letter-spacing: 3px;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1.2fr;
+	grid-template-rows: 1fr 1.7fr;
 	grid-template-areas:
 		". theme-toggle-labels"
 		"theme-label toggle";
+	row-gap: 5px;
 	column-gap: 25px;
 	/* border: 1px solid cyan; */
 }
@@ -61,15 +70,31 @@ body {
 	grid-area: theme-toggle-labels;
 	display: flex;
 	justify-content: space-between;
+	text-align: center;
+	margin: 0 auto;
+	width: 80%;
 }
 
 .theme-label {
 	grid-area: theme-label;
+	align-self: center;
 }
 
 .theme-toggle {
 	grid-area: toggle;
 	background: var(--one-alt-bg);
+	border-radius: 35px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.active {
+	background: var(--one-red);
+	border-radius: 100%;
+	width: 65%;
+	height: 65%;
+	align-self: center;
+	justify-self: center;
 }
 
 .number-output {
@@ -90,9 +115,10 @@ body {
 	border-radius: 10px;
 }
 
-.input div {
+.input button {
 	/* border: 1px solid cyan; */
 	background-color: var(--one-light-gray);
+	box-shadow: 0px -6px 0px 0px var(--one-gray) inset;
 	border-radius: 5px;
 	display: flex;
 	justify-content: center;
@@ -108,10 +134,17 @@ body {
 .input-alt {
 	/* color: white; */
 	background-color: var(--one-key-bg) !important;
-	font-size: 1.2rem;
+	box-shadow: 0px -6px 0px 0px var(--one-key-shadow) inset !important;
+	font-size: 1.1rem;
 	color: white;
 }
 
 .equal {
 	background-color: var(--one-red) !important;
+	box-shadow: 0px -6px 0px 0px var(--one-dark-red) inset !important;
+}
+
+.number-output {
+	color: white;
+	text-align: right;
 }
