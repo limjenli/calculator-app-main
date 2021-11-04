@@ -18,6 +18,12 @@ body {
 	--color-text-accent-1: hsl(0, 0%, 100%);
 	--color-text-accent-2: hsl(0, 0%, 100%);
 	--color-text-screen: hsl(0, 0%, 100%);
+
+	transition: color 0.8s, background-color 0.8s;
+}
+
+.preload {
+	transition: none;
 }
 
 .theme-2 {
@@ -169,7 +175,7 @@ button {
 	/* border: 1px solid cyan; */
 	background-color: var(--color-bg-key-base);
 	color: var(--color-text);
-	box-shadow: 0px -6px 0px 0px var(--color-shadow-key-base) inset;
+	box-shadow: 0px -5px 0px 0px var(--color-shadow-key-base) inset;
 	border-radius: 5px;
 	display: flex;
 	justify-content: center;
@@ -215,4 +221,18 @@ button:active {
 .number-output {
 	color: var(--color-text-screen);
 	text-align: right;
+}
+
+@media (min-width: 750px) {
+	.calculator {
+		max-width: 520px;
+	}
+
+	.input button {
+		border-radius: 8px;
+	}
+
+	.input {
+		gap: 23px;
+	}
 }
